@@ -4,6 +4,7 @@ from .pages.basket_page import BasketPage
 from .pages.main_page import MainPage
 from .pages.login_page import LoginPage
 
+
 @pytest.mark.login_guest
 class TestLoginFromMainPage(object):
     def test_guest_can_go_to_login_page(self, browser):
@@ -29,5 +30,3 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     basket_page = BasketPage(browser, browser.current_url)
     basket_page.should_be_no_items()
     basket_page.should_be_empty_message()
-
-

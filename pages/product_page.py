@@ -17,7 +17,7 @@ class ProductPage(BasePage):
         """Проверка: название товара в сообщении совпадает с добавленным товаром"""
         book_title = self.browser.find_element(*ProductPageLocators.BOOK_TITLE).text
         message_after_add = self.browser.find_element(*ProductPageLocators.BASKET_BOOK_NAME).text
-        assert book_title == message_after_add, f"book title does not match name in message: '{book_title}' != '{message_after_add}'"
+        assert book_title == message_after_add, f"book title does not match name: '{book_title}' != '{message_after_add}' "
 
     def should_be_same_prices(self):
         """Проверка: стоимость корзины равна цене товара"""
@@ -34,4 +34,4 @@ class ProductPage(BasePage):
     def message_should_be_disappeared(self):
         """Проверка, что элемент исчез спустя заданное время"""
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
-                'Success message is not disappeared, but should be'
+            'Success message is not disappeared, but should be'

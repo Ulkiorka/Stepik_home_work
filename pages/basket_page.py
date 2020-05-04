@@ -9,4 +9,4 @@ class BasketPage(BasePage):
 
     def should_be_empty_message(self):
         empty_text = self.browser.find_element(*BasketPageLocators.EMPTY_TEXT).text
-        assert "Ваша корзина пуста" in empty_text , "empty basket text is absent"
+        assert "Ваша корзина пуста" in empty_text, "empty basket text is absent"
